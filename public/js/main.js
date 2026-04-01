@@ -573,6 +573,7 @@ async function start() {
     initNav();
     initInquiryForm();
 
+    _('project-back').addEventListener('click', () => history.back());
     _('lightbox').addEventListener('click', closeLightbox);
     _('lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
 

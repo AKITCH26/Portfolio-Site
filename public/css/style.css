@@ -850,8 +850,26 @@ nav svg {
   background: rgba(17, 17, 17, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #ffffff10;
-  flex-shrink: 0;
 }
+
+.project-back {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid #ffffff22;
+  border-radius: 99px;
+  color: #ffffffaa;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.project-back:hover { border-color: #ffffff66; color: #fff; }
+.project-back svg { width: 16px; height: 16px; }
 
 
 .project-header-info {
