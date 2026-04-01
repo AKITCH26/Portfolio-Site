@@ -271,12 +271,14 @@ app.use((err, req, res, next) => {
 });
 
 // ── Temp debug (remove after confirming) ─────────────────────────────────────
-app.get('/api/debug', (req, res) => {
+app.get('/api/debug', async (req, res) => {
+  const { data, error } = await supabase.from('projects').select('id, title').order('sort_order');
   res.json({
     has_url: !!process.env.SUPABASE_URL,
     has_key: !!process.env.SUPABASE_SERVICE_KEY,
-    url_prefix: (process.env.SUPABASE_URL || '').slice(0, 30),
     node_env: process.env.NODE_ENV,
+    projects_data: data,
+    projects_error: error,
   });
 });
 
