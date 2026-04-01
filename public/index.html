@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="indicator"></div>
+
+    <nav>
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+          </svg>
+        </div>
+        <div id="nav-name"></div>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <button class="nav-mobile-close" id="nav-close" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <button class="nav-item active" data-page="work">Work</button>
+        <button class="nav-item" data-page="about">About</button>
+        <button class="nav-item" data-page="contact">Contact</button>
+        <button class="nav-book" data-page="contact">Book a Session</button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Slider -->
+    <div id="demo"></div>
+
+    <div class="details" id="details-even">
+      <div class="place-box"><div class="text"></div></div>
+      <div class="title-box-1"><div class="title-1"></div></div>
+      <div class="title-box-2"><div class="title-2"></div></div>
+      <div class="desc"></div>
+      <div class="cta">
+        <a class="discover" href="#" target="_blank">View Gallery</a>
+      </div>
+    </div>
+
+    <div class="details" id="details-odd">
+      <div class="place-box"><div class="text"></div></div>
+      <div class="title-box-1"><div class="title-1"></div></div>
+      <div class="title-box-2"><div class="title-2"></div></div>
+      <div class="desc"></div>
+      <div class="cta">
+        <a class="discover" href="#" target="_blank">View Gallery</a>
+      </div>
+    </div>
+
+    <div class="pagination" id="pagination">
+      <div class="arrow arrow-left">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </div>
+      <div class="arrow arrow-right">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </div>
+      <div class="progress-sub-container">
+        <div class="progress-sub-background">
+          <div class="progress-sub-foreground"></div>
+        </div>
+      </div>
+      <div class="slide-numbers" id="slide-numbers"></div>
+    </div>
+
+    <!-- Project Detail Panel -->
+    <div id="project-panel" class="page-panel project-panel">
+      <header class="project-header">
+        <div class="project-header-info">
+          <span class="project-header-category" id="project-panel-category"></span>
+          <h2 class="project-header-title">
+            <span id="project-panel-title-1"></span>
+            <span class="project-header-sep"> — </span>
+            <span id="project-panel-title-2"></span>
+          </h2>
+        </div>
+        <a id="project-panel-link" class="project-header-link hidden" href="#" target="_blank" rel="noopener">
+          Visit Site
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+        </a>
+      </header>
+      <div class="project-scroll">
+        <div class="project-desc-bar" id="project-desc-bar">
+          <p id="project-panel-desc"></p>
+        </div>
+        <div id="project-gallery" class="project-gallery"></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" style="display:none">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="lightbox-img" src="" alt="" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- About Panel -->
+    <div id="about-panel" class="page-panel about-panel">
+      <div class="about-scroll-fade"></div>
+      <div class="about-photo-side" id="about-photo-wrap">
+        <img id="about-photo" src="" alt="" />
+        <div class="about-photo-overlay"></div>
+      </div>
+      <div class="about-content-side">
+        <div class="panel-eyebrow">
+          <span class="panel-line"></span>
+          <span class="panel-label">About</span>
+        </div>
+        <h1 class="panel-name" id="about-name"></h1>
+        <p class="panel-tagline" id="about-tagline"></p>
+        <div id="about-availability" class="availability-badge"></div>
+        <p class="panel-bio" id="about-bio"></p>
+        <button class="panel-cta" data-page="contact">Work with me →</button>
+
+        <!-- Reviews carousel -->
+        <div id="reviews-section" class="reviews-section hidden">
+          <div class="reviews-eyebrow">
+            <span class="panel-line"></span>
+            <span class="panel-label">Client Reviews</span>
+          </div>
+          <div class="reviews-track-wrap">
+            <div class="reviews-track" id="reviews-track"></div>
+          </div>
+          <div class="reviews-dots" id="reviews-dots"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Panel -->
+    <div id="contact-panel" class="page-panel">
+      <div class="panel-inner contact-inner">
+        <div class="contact-left">
+          <div class="panel-eyebrow">
+            <span class="panel-line"></span>
+            <span class="panel-label">Contact</span>
+          </div>
+          <h1 class="panel-name">Let's work<br>together.</h1>
+          <a id="contact-email" class="contact-email" href=""></a>
+          <div id="contact-links" class="contact-links"></div>
+          <div class="contact-services">
+            <p class="contact-services-label">Services</p>
+            <ul id="contact-services-list" class="contact-services-list">
+              <li>Wedding Photography</li>
+              <li>Portrait Sessions</li>
+              <li>Commercial &amp; Brand</li>
+              <li>Landscape &amp; Travel</li>
+            </ul>
+          </div>
+          <div class="contact-response">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Typically responds within 24 hours
+          </div>
+        </div>
+        <div class="contact-right">
+          <form id="inquiry-form" class="inquiry-form" novalidate>
+            <h3 class="form-heading">Send an Inquiry</h3>
+            <div class="form-row">
+              <div class="form-field">
+                <label>Your Name</label>
+                <input type="text" id="inq-name" placeholder="Jane Smith" required />
+              </div>
+              <div class="form-field">
+                <label>Email Address</label>
+                <input type="email" id="inq-email" placeholder="jane@email.com" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Message</label>
+              <textarea id="inq-message" rows="5" placeholder="Tell me about your project — date, location, what you have in mind…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+            <p id="form-success" class="form-success hidden">Message sent! I'll be in touch soon.</p>
+            <p id="form-error" class="form-error hidden">Something went wrong. Please try again.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div id="empty-state" style="display:none">
+      <div class="empty-content">
+        <p>No projects yet.</p>
+        <a href="/admin">Add your work in the admin panel →</a>
+      </div>
+    </div>
+
+    <div class="cover"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="/js/main.js?v=8"></script>
+  </body>
+</html>

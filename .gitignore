@@ -1,0 +1,24 @@
+# Environment variables — never commit these
+.env
+.env.local
+.env.production
+
+# Dependencies
+node_modules/
+
+# Local data files (replaced by Supabase)
+data/
+
+# Uploaded files (replaced by Supabase Storage)
+public/uploads/
+
+# Migration script (only needed locally)
+migrate.js
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
