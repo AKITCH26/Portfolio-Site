@@ -827,7 +827,7 @@ nav svg {
 /* ── Cover (intro animation) ── */
 /* ── Project Detail Panel ── */
 .project-panel {
-  z-index: 75;
+  z-index: 85;
   flex-direction: column;
   align-items: stretch;
   overflow: hidden;
