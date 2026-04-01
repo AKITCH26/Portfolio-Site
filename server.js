@@ -1,4 +1,7 @@
-require('dotenv').config({ path: require('path').join(__dirname, '.env') });
+// Load .env locally; on Vercel env vars are injected directly into process.env
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config({ path: require('path').join(__dirname, '.env') });
+}
 const express  = require('express');
 const path     = require('path');
 const multer   = require('multer');
