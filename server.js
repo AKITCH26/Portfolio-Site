@@ -270,6 +270,16 @@ app.use((err, req, res, next) => {
   next(err);
 });
 
+// ── Temp debug (remove after confirming) ─────────────────────────────────────
+app.get('/api/debug', (req, res) => {
+  res.json({
+    has_url: !!process.env.SUPABASE_URL,
+    has_key: !!process.env.SUPABASE_SERVICE_KEY,
+    url_prefix: (process.env.SUPABASE_URL || '').slice(0, 30),
+    node_env: process.env.NODE_ENV,
+  });
+});
+
 // ── Admin route ───────────────────────────────────────────────────────────────
 app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin.html'));
