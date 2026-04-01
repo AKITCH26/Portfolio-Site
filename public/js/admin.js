@@ -119,12 +119,56 @@ function populateProfile() {
   $('owner-availability').value  = owner.availability  || '';
   $('owner-specialization').value= owner.specialization|| '';
   $('owner-profile-photo').value = owner.profilePhoto  || '';
+  updateProfilePhotoPreview(owner.profilePhoto || '');
   $('owner-email').value         = owner.email         || '';
   $('owner-website').value       = owner.website       || '';
   $('owner-instagram').value     = owner.instagram     || '';
   $('owner-linkedin').value      = owner.linkedin      || '';
   $('owner-twitter').value       = owner.twitter       || '';
 }
+
+function updateProfilePhotoPreview(url) {
+  const img = $('profile-photo-img');
+  const placeholder = $('profile-photo-placeholder');
+  if (url) {
+    img.src = url;
+    img.style.display = 'block';
+    placeholder.style.display = 'none';
+  } else {
+    img.style.display = 'none';
+    placeholder.style.display = 'block';
+  }
+}
+
+// Profile photo URL input → live preview
+$('owner-profile-photo').addEventListener('input', (e) => {
+  updateProfilePhotoPreview(e.target.value.trim());
+});
+
+// Profile photo file upload
+$('profile-photo-file').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const fd = new FormData();
+  fd.append('image', file);
+  try {
+    const res = await fetch('/api/upload', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+      body: fd,
+    });
+    if (!res.ok) throw new Error('Upload failed');
+    const { url } = await res.json();
+    $('owner-profile-photo').value = url;
+    updateProfilePhotoPreview(url);
+    collectProfile();
+    collectSettings();
+    await savePortfolio(true);
+  } catch (err) {
+    alert('Photo upload failed. Please try again.');
+  }
+  e.target.value = '';
+});
 
 function collectProfile() {
   portfolioData.owner = {

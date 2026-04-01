@@ -123,9 +123,20 @@
               <label>Specialization <span class="hint">e.g. Wedding & Portrait Photography</span></label>
               <input type="text" id="owner-specialization" placeholder="Wedding & Portrait Photography" />
             </div>
-            <div class="field">
-              <label>Profile Photo URL <span class="hint">Shown on the About page</span></label>
-              <input type="url" id="owner-profile-photo" placeholder="https://..." />
+            <div class="field full">
+              <label>Profile Photo <span class="hint">Shown on the About page</span></label>
+              <div class="profile-photo-upload">
+                <div class="profile-photo-preview" id="profile-photo-preview">
+                  <img id="profile-photo-img" src="" alt="" style="display:none" />
+                  <span id="profile-photo-placeholder">No photo</span>
+                </div>
+                <div class="profile-photo-actions">
+                  <label class="upload-browse-btn" for="profile-photo-file">Upload Photo</label>
+                  <input type="file" id="profile-photo-file" accept="image/*" style="display:none" />
+                  <span style="color:var(--text-muted);font-size:12px">or paste a URL</span>
+                  <input type="url" id="owner-profile-photo" placeholder="https://..." />
+                </div>
+              </div>
             </div>
           </div>
           <div class="section-heading">Contact Info</div>
