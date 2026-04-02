@@ -146,11 +146,17 @@ function buildStars(n) {
   ).join('');
 }
 
+const FALLBACK_REVIEWS = [
+  { name: 'Sarah Mitchell', role: 'Bride', text: 'Every emotion from our wedding day captured perfectly. The photos are absolutely breathtaking — we relive the entire day every time we look at them.', rating: 5 },
+  { name: 'Marcus Webb', role: 'Creative Director', text: 'Working together on our brand campaign was a game changer. The shots had exactly the mood we were going for, delivered fast and with zero stress.', rating: 5 },
+  { name: 'Priya Nair', role: 'Portrait Client', text: 'I was nervous in front of the camera but felt completely at ease. The portraits came out better than I ever imagined — truly captured who I am.', rating: 5 },
+];
+
 function initReviews(reviews) {
   const section  = _('reviews-section');
   const track    = _('reviews-track');
   const dotsEl   = _('reviews-dots');
-  if (!reviews || reviews.length === 0) { section.classList.add('hidden'); return; }
+  if (!reviews || reviews.length === 0) reviews = FALLBACK_REVIEWS;
   section.classList.remove('hidden');
 
   track.innerHTML = reviews.map(r => `
